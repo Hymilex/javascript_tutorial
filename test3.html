@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM控制</title>
+    <!--
+	①通过ID获取元素document.getElementById();
+	②innerHTML属性用于替换HTML元素的内容：Object.innerHTML ==>1.obj 表示的是document.getElementById()获取的元素。2.innerHTML注意区分大小写
+	③改变HTML样式 语法：Object.style.property=new style;
+	注意：Object是获取的元素对象，如通过document.getElementById()获取的元素。
+	var mychar=document.getElementById();
+	mychar.style.color=;
+	mychar.style.backgroundColor=;
+	mychar.style.width=;
+	④显示和隐藏(display属性)
+	mychar.style.display=;[none block ..]
+	⑤控制类名(className属性)
+	object.className=classname;
+	作用：1.获取元素的class属性2.为网页的某个元素指定一个css样式来改变元素的外观
+	⑥任务：
+	1.定义改变颜色的函数
+	2.定义改变宽高函数
+	3.定义隐藏内容的函数
+	4.定义显示内容的函数
+	5.定义取消设置的函数
+	6.点击事件的相应操作
+	-->
+    <style>
+    body {
+        font-size: 12px;
+    }
+    
+    #txt {
+        height: 400px;
+        width: 600px;
+        border: #333 solid 1px;
+        padding: 5px;
+        border-radius: 2px;
+    }
+    
+    p {
+        line-height: 18px;
+        /*//行高设置*/
+        text-indent: 2em;
+        /*文本间距*/
+    }
+    #reset{
+    	background-color: rgba(243,56,33,0.5);
+    	border-radius: 2px;
+    	width: 30px;
+    	height: 10px;
+    }
+    </style>
+    <script>
+    function hide() {
+        var tempq = document.getElementById("txt");
+        tempq.style.display='none';
+    }
+
+    function show() {
+        let temps = document.getElementById("txt");
+        temps.style.display='block';
+    }
+
+    function color_set() {
+        var temp = document.getElementById("txt");
+        temp.style.color = 'red';
+    }
+
+    function wh_set() {
+        var tp = document.getElementById("txt");
+        tp.style.width = 600;
+        tp.style.height = 600;
+    }
+    function reset(){
+    	let p1=confirm("是否取消修改的样式?");
+    	let p=document.getElementById("txt");
+    	if(p){
+    		p.removeAttribute('style');
+    	}
+    	else{
+    		return ;
+    	}
+    }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="function1" onclick="color_set()">
+    <input type="button" value="function2" onclick="wh_set()">
+    <input type="button" value="function3" onclick="hide()">
+    <input type="button" value="function4" onclick="show()">
+    <buttion id="reset" onclick="reset()">还原</buttion>
+    <div id="txt">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur tenetur deleniti, iure atque officia architecto rem debitis vitae, ab aliquam alias ut sint ratione aut cum. Ratione incidunt, eligendi repudiandae.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem debitis dolorum exercitationem nesciunt quisquam eos vero quod eveniet reiciendis similique amet delectus, placeat dolorem recusandae quidem? Unde delectus, reprehenderit culpa.
+    </div>
+</body>
+
+</html>

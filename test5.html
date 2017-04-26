@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>事件练习</title>
+    <!-- 	1.继续循环continue;//仅仅跳过本次循环，整个循环还在进行。
+	for(1,2,3){
+	if(特殊情况){
+	continue;
+	}
+	循环代码;
+	}
+	2.js创建动态页面
+		①鼠标点击事件 onclick:
+		②鼠标经过事件 onmouseover:
+		③鼠标移开事件：onmouseout:
+		④光标聚焦事件: onfocus:
+		⑤失焦事件: onblur:与onfocus是相事件 当光标离开时当前获得对象的时候，触发onblur事件
+		⑥内容选中事件: onselect 选中事件,当文本或者文本域中的文字被选中时，触发onselect事件,同时调用的程序就会被调用。
+		⑦文本框内容改变事件：onchange事件
+		⑧加载事件:onload 事件会在页面加载完成后，立即发生，同时执行被调用的程序。
+		注意：1.加载页面时，触发onload事件写在body标签内。
+			  2.此节的加载相当于打开一个新的页面时。
+		⑨卸载事件:onunload事件 当用户退出页面时(页面关闭、页面刷新等),触发onunload事件，同时执行被调用。
+		window.onunload=function(){}; -->
+    <script>
+    function get_value(){
+    	let c=document.getElementById("name");
+    	let d=document.getElementById("pwd");
+    	document.write("name:"+c.value+"value:"+d.value);
+    }
+    function demo(){
+    	alert("hello world!");
+    }
+    </script>
+</head>
+
+<body>
+    <form action="">
+        <div class="normal">
+            <label for="name">User:</label>
+            <input type="text" id="name" class="un_text" placeholder="请输入账号" onchange="demo()">
+        </div>
+        <div class="normal">
+            <label for="pass">Pwd:</label>
+            <input type="text" id="pwd" class="un_text" placeholder="请输入密码" onmouseover="demo()">
+        </div>
+        <div class="normal">
+            <input type="button" class="btn" name='提交' value="提交" onclick="get_value()">
+            <input type="button" class="btn" name='取消' value="取消">
+        </div>
+    </form>
+</body>
+
+</html>

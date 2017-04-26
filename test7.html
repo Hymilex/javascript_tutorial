@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计时器</title>
+<!-- 	1.计时器
+	setInterval(代码,交互时间);
+	代码：要调用的函数或者要执行的代码串
+	交互时间：周期性执行或者调用表达式之间的时间间隔 
+		2.取消计时器
+		clearInterval(id_of_setInterval)
+		由setInterval返回的ID
+		3.延时计时器seTimeout(代码，延时时间)
+
+	-->
+	<script>
+		function clock(){
+			let time=new Date(),
+			h="当前时间是:"+time.getHours()+':'+time.getMinutes()+':'+time.getSeconds();
+			document.getElementById("attm").value=h;
+		}
+		setInterval(clock, 1000);
+		function color(){
+			let r=parseInt(Math.random()*255),
+			g=parseInt(Math.random()*255),
+			b=parseInt(Math.random()*255);
+			
+			let c="rgb("+r+','+g+','+b+")";
+			var mp=document.getElementById("pps").style.backgroundColor=c;
+		}
+		setInterval(color, 1000);
+		function delay(){
+			let p=document.getElementById("content");
+			let r=Math.random()*600;
+			p.innerHTML="hello lorem and Simon!"+parseInt(r);
+			setTimeout(delay,2000)
+		}
+		setInterval(delay,1000);
+	</script>
+	<style>
+		#attm{
+			border-style: none;
+			background-color: rgba(123,21,200,0.2);
+			border-radius: 3px;
+			text-align: center;
+		}
+		#pps{
+			border-radius: 5px;
+			width: 300px;
+			height: 200px;
+			text-align: center;
+			align-content: center;
+		}
+	</style>
+</head>
+<body>
+<div id="pps">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim mollitia dolorum quo aliquid iste consectetur incidunt dolorem inventore, rerum tempore? Nostrum, saepe itaque. In sunt cum nam, odio ipsum autem.</div>
+	<input type="text" id="attm" readonly="readonly">
+	<div id="content">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. At modi, amet aliquam? Obcaecati, numquam velit cumque ab! Dolorum non cumque alias nulla ea, odio nostrum voluptate magni illo dolorem sunt.
+	</div>
+</body>
+</html>
